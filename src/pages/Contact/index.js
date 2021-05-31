@@ -63,7 +63,7 @@ const Contact = () => {
       try {
         setSending(true);
 
-        const response = await fetch('/api/message', {
+        const response = await fetch('/api/message.js', {
           method: 'POST',
           mode: 'cors',
           headers: {
@@ -85,13 +85,11 @@ const Contact = () => {
 
         if (statusError) throw new Error(statusError);
 
+        setComplete(true);
         setSending(false);
-        setComplete(true);
-
       } catch (error) {
-       // setSending(true);
-        setComplete(true);
-      // setStatusError(error.message);
+        setSending(false);
+        setStatusError(error.message);
       }
     },
     [email.value, message.value, sending]
