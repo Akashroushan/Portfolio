@@ -86,10 +86,10 @@ const Contact = () => {
         if (statusError) throw new Error(statusError);
 
         setComplete(true);
-        setSending(false);
+        setSending(true);
       } catch (error) {
-        setSending(false);
-        setStatusError(error.message);
+        setSending(true);
+      // setStatusError(error.message);
       }
     },
     [email.value, message.value, sending]
