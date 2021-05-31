@@ -223,7 +223,7 @@ const Contact = () => {
                   )}
                   style={getDelay(tokens.base.durationXS)}
                 >
-                  I’ll get back to you within a couple days
+                  I’ll get back to you as soon as possible :)
                 </Text>
                 <Button
                   secondary
