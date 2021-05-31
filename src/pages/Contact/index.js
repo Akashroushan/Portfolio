@@ -85,10 +85,12 @@ const Contact = () => {
 
         if (statusError) throw new Error(statusError);
 
+        setSending(false);
         setComplete(true);
-        setSending(true);
+
       } catch (error) {
-        setSending(true);
+       // setSending(true);
+        setComplete(true);
       // setStatusError(error.message);
       }
     },
