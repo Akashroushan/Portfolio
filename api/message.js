@@ -7,13 +7,12 @@ const { sanitize } = DOMPurify(window);
 
 const { smtpHost, smtpUser, smtpPass } = process.env;
 const mailTransport = nodemailer.createTransport({
-  host: smtpHost,
-  port: 465,
-  secure: true,
+  service:'gmail',
   auth: {
-    user: smtpUser,
-    pass: smtpPass,
-  },
+      user: 'kakashi.amzn@gmail.com',
+      password: 'kingsmen'
+  }
+  
 });
 
 const MAX_EMAIL_LENGTH = 512;
@@ -41,7 +40,7 @@ module.exports = async (req, res) => {
 
     // Send email
     const mailOptions = {
-      from: 'Portfolio <kakashi.amzn@gmail.com>',
+      from: 'kakashi.amzn@gmail.com',
       to: 'aakashroushann@gmail.com',
       subject: `New message from ${email}`,
       text: `From: ${email}\n\n${message}`,
